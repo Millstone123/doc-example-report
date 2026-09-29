@@ -5,6 +5,8 @@ from pathlib import Path
 import re
 from typing import Tuple
 
+from .quality import render_checked_score
+
 
 HEADING = re.compile(r"^(#{1,6})\s+(.+)$", re.MULTILINE)
 ISSUE = re.compile(r"\[#(\d+)\]")
@@ -20,6 +22,10 @@ class Report:
     versions: Tuple[str, ...]
     score: int
     notes: Tuple[str, ...]
+
+    @property
+    def checked_score(self) -> int:
+        return render_checked_score(self.score)
 
 
 def analyze_text(text: str) -> Report:

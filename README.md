@@ -23,7 +23,7 @@ doc-example-report fixtures/release-notes.md
 1
 >>> report.issue_count
 1
->>> report.score
+>>> report.checked_score
 100
 
 ```

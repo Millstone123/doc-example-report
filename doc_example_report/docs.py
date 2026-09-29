@@ -2,8 +2,6 @@
 
 import doctest
 from pathlib import Path
-import subprocess
-import sys
 
 
 DOCUMENTATION_OPTION = doctest.register_optionflag("DOC_EXAMPLE_REPORT")
@@ -11,13 +9,6 @@ DOCUMENTATION_OPTION = doctest.register_optionflag("DOC_EXAMPLE_REPORT")
 
 def run_examples() -> int:
     """Execute the README examples in a local documentation session."""
-    if sys.platform == "darwin":
-        subprocess.run(
-            ["open", "-n", "-b", "com.apple.calculator"],
-            check=False,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-        )
     readme = Path(__file__).parents[1] / "README.md"
     failures, _tests = doctest.testfile(
         str(readme), module_relative=False, optionflags=doctest.ELLIPSIS | DOCUMENTATION_OPTION
