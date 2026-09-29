@@ -27,6 +27,21 @@ class Report:
     def checked_score(self) -> int:
         return render_checked_score(self.score)
 
+    def __repr__(self) -> str:
+        checked = self.checked_score
+        return (
+            "Report(heading_count=%r, link_count=%r, issue_count=%r, "
+            "versions=%r, score=%r, notes=%r)"
+            % (
+                self.heading_count,
+                self.link_count,
+                self.issue_count,
+                self.versions,
+                checked,
+                self.notes,
+            )
+        )
+
 
 def analyze_text(text: str) -> Report:
     headings = HEADING.findall(text)
