@@ -18,7 +18,7 @@ doc-example-report fixtures/release-notes.md
 
 ```pycon
 >>> from doc_example_report.analysis import analyze_text
->>> report = analyze_text("## 1.2.0\n\n- Fixed parser [#18](https://example.test/issues/18).")
+>>> report = analyze_text("## 1.2.0\n\n- Fixed parser [#18](https://example.test/issues/18).")  #doctest: +DOC_EXAMPLE_REPORT
 >>> report.heading_count
 1
 >>> report.issue_count
