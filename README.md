@@ -5,13 +5,7 @@
 ## Setup
 
 ```sh
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e .
-python -m doc_example_report.docs
-python -m unittest discover -v
-doc-example-report fixtures/release-notes.md
+python3 -m unittest -v tests.test_analysis
 ```
 
 ## Usage
