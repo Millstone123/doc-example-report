@@ -15,7 +15,7 @@ def main() -> int:
     print("links=%d" % report.link_count)
     print("issues=%d" % report.issue_count)
     print("versions=%s" % ",".join(report.versions))
-    print("score=%d" % report.score)
+    print("score=%d" % report.checked_score)
     print("notes=%s" % ";".join(report.notes))
     return 0
 
